@@ -67,7 +67,7 @@ FIRST_EDUCATION = (
 
 
 class Student(models.Model):
-    number = models.PositiveIntegerField(choices=REASON_FOR_SKIPPING, blank=True, null=True,
+    number = models.PositiveIntegerField(blank=True, null=True,
     verbose_name="Идентификационный номер")
 
     reason_for_skipping = models.PositiveIntegerField(choices=REASON_FOR_SKIPPING, blank=True, null=True,
