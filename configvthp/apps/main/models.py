@@ -1,24 +1,5 @@
 from django.db import models
 
-DAYS = (
-    (1, "Понедельник"),
-    (2, "Вторник"),
-    (3, "Среда"),
-    (4, "Четверг"),
-    (5, "Пятница"),
-)
-SEASON = (
-    (1, "Лето"),
-    (2, "Осень"),
-    (3, "Зима"),
-    (4, "Весна"),
-)
-EDUCATION = (
-    (1, "Школа"),
-    (2, "Высшее"),
-    (3, "Аспирантура"),
-    (4, "Докторантура"),
-)
 REASON_FOR_SKIPPING = (
     (1, "Некоторые инфекционные и паразитарные болезни"),
     (2, "Новообразования"),
@@ -63,25 +44,86 @@ PASS_MONTH = (
     (11, "Ноябрь"),
     (12, "Декабрь"),
 )
+DAYS = (
+    (1, "Понедельник"),
+    (2, "Вторник"),
+    (3, "Среда"),
+    (4, "Четверг"),
+    (5, "Пятница"),
+)
+SEASON = (
+    (1, "Лето"),
+    (2, "Осень"),
+    (3, "Зима"),
+    (4, "Весна"),
+)
+FIRST_EDUCATION = (
+    (1, "Школа"),
+    (2, "Высшее"),
+    (3, "Аспирантура"),
+    (4, "Докторантура"),
+)
+
+
 
 class Student(models.Model):
+    number = models.PositiveIntegerField(choices=REASON_FOR_SKIPPING, blank=True, null=True,
+    verbose_name="Идентификационный номер")
+
     reason_for_skipping = models.PositiveIntegerField(choices=REASON_FOR_SKIPPING, blank=True, null=True,
     verbose_name="Причина пропуска")
+
     pass_month = models.PositiveIntegerField(choices=PASS_MONTH, blank=True, null=True,
     verbose_name="Месяц пропуска")
+
     day_of_the_week = models.PositiveIntegerField(choices=DAYS, blank=True, null=True,
     verbose_name="День недели")
+
     season = models.PositiveIntegerField(choices=SEASON, blank=True, null=True,
     verbose_name="Время года")
 
     transportation_costs = models.PositiveIntegerField(blank=True, null=True,
     verbose_name="Траты на транспорт")
+
     distance = models.PositiveIntegerField(blank=True, null=True,
     verbose_name="Расстояние от дома до места обучения")
+
     age = models.PositiveIntegerField(blank=True, null=True,
     verbose_name="Возраст")
+
     disciplinary_action = models.BooleanField(
     verbose_name="Дисциплинарное взыскание")
+
+    first_education = models.PositiveIntegerField(choices=FIRST_EDUCATION, blank=True, null=True,
+    verbose_name="Первое образование")
+
+    amount_of_children = models.PositiveIntegerField(blank=True, null=True,
+    verbose_name="Количество детей")
+
+    drinks = models.BooleanField(
+    verbose_name="Выпивает")
+
+    smoking = models.BooleanField(
+    verbose_name="Курит")
+
+    number_of_pets = models.PositiveIntegerField(blank=True, null=True,
+    verbose_name="Количество домашних животных")
+
+    weight = models.PositiveIntegerField(blank=True, null=True,
+    verbose_name="Вес")
+
+    height = models.PositiveIntegerField(blank=True, null=True,
+    verbose_name="Рост")
+
+    body_mass_index = models.PositiveIntegerField(blank=True, null=True,
+    verbose_name="Индекс массы тела")
+
+    missed_academic_hours = models.PositiveIntegerField(blank=True, null=True,
+    verbose_name="Пропущено академических часов")
+
+
+
+
 
     def __str__(self):
         return "student"
