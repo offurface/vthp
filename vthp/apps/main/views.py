@@ -22,14 +22,15 @@ from .forms import UploadFileForm
 class MainView(View):
 
     def get(self, request, *args, **kwargs):
-
         form = UploadFileForm
-
         return render(request, "main/main.html", {
             "form": form,
         })
 
     def post(self, request, *args, **kwargs):
+        form = UploadFileForm(request.POST, request.FILES)
+        print(request.FILES['file1'])
+        print(request.FILES['file2'])
+        return render(request, "main/main.html", {
 
-
-        return render(request, "main/main.html")
+        })
