@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Авторизация{% endblock %}
+{% block title %}Выбор файлов{% endblock %}
 
 {% block content %}
 <div class="center-wrap login-wrap">
@@ -10,19 +10,13 @@
       {% csrf_token %}
       {% load widget_tweaks %}
 
-      <p class="">Выберите файл</p>
-      <select name="select" id="" class="combobox">
-        {% for f in files %}
-          <option value="{{ f.document.path }}">{{ f.title }}</option>
-        {% endfor %}
-      </select>
+      <p class="">Файл для обучения 1</p>
 
-      <p class="">Выберите файл</p>
-      <select name="select" id="" class="combobox">
-        {% for f in files %}
-          <option value="{{ f.document.path }}">{{ f.title }}</option>
-        {% endfor %}
-      </select>
+      {{form.file1|add_class:"combobox"}}
+
+      <p class="">Файл для обучения 2</p>
+
+      {{form.file2|add_class:"combobox"}}
 
 
 

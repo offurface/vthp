@@ -11,66 +11,10 @@
 </head>
 <body>
 
-  {% if user.is_authenticated %}
-  <nav class="top-menu" canvas="">
-    <div class="bar-left">
-      <button class="hamburger hamburger--3dx" type="button">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-      {% block bar-left %}
-      {% endblock %}
-    </div>
-
-
-    <div class="bar-right">
-      {% block bar-right %}
-      {% endblock %}
-    </div>
-
-  </nav>
-  {% endif %}
-
   <div class="page" canvas="container">
     {% block content %}
     {% endblock %}
   </div>
-
-  {% if user.is_authenticated %}
-  <div class="left-menu" off-canvas="left-menu left push">
-
-    <div class="user">
-      <div class="user__img">
-        <img src="{% static 'images/v_gerb.png' %}" alt="" class="user_img">
-      </div>
-      <div class="user__name">
-        {{ user.last_name }} {{ user.first_name }}
-        <a class="user__logout" href="{% url 'logout' %}">
-          {{ user }}
-          <i class="fas fa-sign-out-alt"></i>
-
-        </a>
-      </div>
-      <div class="user__email">
-        {{ user.email }}
-      </div>
-
-      <div class="user__name">
-
-      </div>
-
-    </div>
-
-    <ul>
-      <li>
-        <a href="#"><i class="fas fa-caret-right"></i>Главная</a>
-      </li>
-
-    </ul>
-
-  </div>
-  {% endif %}
 
   <script src="{% static 'js/vendor.js' %} "></script>
   <script src="{% static 'js/script.js' %} "></script>
