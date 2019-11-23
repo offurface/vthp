@@ -24,6 +24,28 @@
       {% csrf_token %}
       {% load widget_tweaks %}
 
+      <div class="container-login">
+        <div class="wrap-login">
+          <form class="login-form validate-form">
+            <span class="login-form-title">Регистрация</span>
+            <div class="wrap-input" data-validate="Enter username">
+            <!--<input class="input" type="text" name="login" placeholder="Login">-->
+            {{ form.username|add_class:"input" }}
+            <span class="focus-input" data-placeholder="Username"></span>
+          </div>
+          <div class="wrap-input" data-validate="Enter password">
+            <!--<input class="input" type="password" name="pass" placeholder="Password">-->
+            {{ form.password|add_class:"input" }}
+            <span class="focus-input" data-placeholder="Password"></span>
+          </div>
+          <div class="container-login-form-btn">
+            <button class="login-form-btn">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!--
       <div class="form-model__title">
         <h1>Форма Авторизации</h1>
       </div>
@@ -45,6 +67,7 @@
       <div class="form-model__btn-box">
         <input class="btn btn-second" type="submit" value="Войти">
       </div>
+    -->
     </form>
   </div>
 

@@ -42,36 +42,31 @@
 
     <div class="user">
       <div class="user__img">
-        <img src="" alt="">
+        <img src="{% static 'images/v_gerb.png' %}" alt="" class="user_img">
       </div>
       <div class="user__name">
         {{ user.last_name }} {{ user.first_name }}
         <a class="user__logout" href="{% url 'logout' %}">
+          {{ user }}
           <i class="fas fa-sign-out-alt"></i>
+
         </a>
       </div>
       <div class="user__email">
         {{ user.email }}
       </div>
 
+      <div class="user__name">
+
+      </div>
+
     </div>
 
     <ul>
       <li>
-        <a href="{% url 'registry' %}"><i class="fas fa-caret-right"></i> Главная</a>
+        <a href="#"><i class="fas fa-caret-right"></i>Главная</a>
       </li>
-      <li>
-        <a href="{% url 'sport-type-list' %}"><i class="fas fa-caret-right"></i> Виды спорта</a>
-      </li>
-      <li>
-        <a href="{% url 'coach-list' %}"><i class="fas fa-caret-right"></i> Тренеры</a>
-      </li>
-      <li>
-        <a href="{% url 'parent-list' %}"><i class="fas fa-caret-right"></i> Представители</a>
-      </li>
-      <li>
-        <a href="{% url 'sportsman-list' %}"><i class="fas fa-caret-right"></i> Спортсмены</a>
-      </li>
+
     </ul>
 
   </div>

@@ -5,12 +5,20 @@
 {% block content %}
 <div class="center-wrap login-wrap">
   <div class="wrap-one">
-    <form class="form-model" action="" method="POST">
+    <form class="forma" action="" method="POST">
 
       {% csrf_token %}
       {% load widget_tweaks %}
 
-      <select name="select" id="">
+      <p class="">Выберите файл</p>
+      <select name="select" id="" class="combobox">
+        {% for f in files %}
+          <option value="{{ f.document.path }}">{{ f.title }}</option>
+        {% endfor %}
+      </select>
+
+      <p class="">Выберите файл</p>
+      <select name="select" id="" class="combobox">
         {% for f in files %}
           <option value="{{ f.document.path }}">{{ f.title }}</option>
         {% endfor %}
@@ -20,7 +28,7 @@
 
 
       <div class="form-model__btn-box">
-        <input class="btn btn-second" value="" type="submit" value="Подобрать">
+        <input class="btn btn-second" value="Обучить" type="submit">
       </div>
 
     </form>
