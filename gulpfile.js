@@ -1,4 +1,3 @@
-// Plugins
 const gulp = require('gulp'),
       fs = require('fs');
       concat = require('gulp-concat');

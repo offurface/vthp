@@ -65,6 +65,20 @@ FIRST_EDUCATION = (
 )
 
 
+class File(models.Model):
+    title = models.CharField(max_length=150,
+    verbose_name="Подпись")
+
+    document = models.FileField(upload_to='documents/',
+    verbose_name="Подпись")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ("title",)
+        verbose_name = "Файл"
+        verbose_name_plural = "Файлы"
 
 class Student(models.Model):
     number = models.PositiveIntegerField(blank=True, null=True,
@@ -120,10 +134,6 @@ class Student(models.Model):
 
     missed_academic_hours = models.PositiveIntegerField(blank=True, null=True,
     verbose_name="Пропущено академических часов")
-
-
-
-
 
     def __str__(self):
         return "student"

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block content %}
+<div class="center-wrap login-wrap">
+  <div class="wrap-one">
+    <form class="form-model" action="" method="POST">
+
+      {% csrf_token %}
+      {% load widget_tweaks %}
+
+      <select name="select" id="">
+        {% for f in files %}
+          <option value="{{ f.document.path }}">{{ f.title }}</option>
+        {% endfor %}
+      </select>
+
+
+
+
+      <div class="form-model__btn-box">
+        <input class="btn btn-second" value="" type="submit" value="Подобрать">
+      </div>
+
+    </form>
+  </div>
+
+</div>
+{% endblock %}
