@@ -3,7 +3,7 @@
 {% block title %}Выбор файлов{% endblock %}
 
 {% block content %}
-<form class="forma" action="" method="POST">
+<form class="forma" action="{% url 'main' %}" enctype="multipart/form-data" method="POST">
   {% csrf_token %}
   {% load widget_tweaks %}
   <p class="">Файл для обучения 1</p>
@@ -11,7 +11,7 @@
   <p class="">Файл для обучения 2</p>
   {{form.file2|add_class:"combobox"}}
   <div class="form-model__btn-box">
-    <input class="btn btn-second" value="Обучить" type="submit">
+    <input class="btn btn-second" type="submit">
   </div>
 </form>
 {% endblock %}
