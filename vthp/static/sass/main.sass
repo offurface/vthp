@@ -136,14 +136,21 @@ button
   background-color: #fff
 
 .combobox
-  height: 32px
   margin: 16px auto
   display: block
   color: #fff
   background-color: #111
-  width: 128px
-  font-size: 16px
+  padding: 32px
+  font-size: 12px
   margin-bottom: 64px
+  border: dotted 1px transparent
+  transition: .2s
+  cursor: pointer
+
+
+.combobox:hover
+  border: dotted 1px white
+  transition: .4s
 
 .forma
   padding: 64px
@@ -154,7 +161,6 @@ button
   height: 100vh
   background-color: #0e0e0e
   background: transparent url(../images/bg.png) repeat 0 0
-
 
 .form-model
   padding: 64px
@@ -167,19 +173,25 @@ button
 .forma p
   color: #fff
   text-align: center
-  font-size: 16px
+  font-size: 24px
 
 .btn
-  width: 128px
+  width: 306px
   margin: 0 auto
   display: block
   background-color: #fff
   color: #111
   border: none
   font-size: 16px
-  padding: 8px
+  padding: 32px
+  border: solid 1px transparent
+  transition: .4s
+  cursor: pointer
 
-
-
+.btn:hover
+  border: solid 1px white
+  background: #111
+  color: #fff
+  transition: .2s
 
 @import "media" // Always at the end
