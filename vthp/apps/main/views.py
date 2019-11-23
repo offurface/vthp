@@ -10,14 +10,9 @@ from .models import (
 )
 from django.views.generic import (
     View,
-    ListView,
-    DetailView,
-    CreateView,
-    UpdateView,
-    DeleteView,
-    TemplateView,
 )
 from .forms import UploadFileForm
+from .predict import main
 
 class MainView(View):
 
@@ -31,6 +26,8 @@ class MainView(View):
         form = UploadFileForm(request.POST, request.FILES)
         print(request.FILES['file1'])
         print(request.FILES['file2'])
+
+        main(request.FILES['file1'], request.FILES['file2'])
         return render(request, "main/main.html", {
 
         })
