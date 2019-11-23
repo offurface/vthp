@@ -28,6 +28,6 @@ class MainView(View):
         print(request.FILES['file2'])
 
         main(request.FILES['file1'], request.FILES['file2'])
-        return render(request, "main/main.html", {
+        return render(request, "main/download.html", {
 
         })
