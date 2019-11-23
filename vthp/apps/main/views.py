@@ -24,8 +24,6 @@ class MainView(View):
 
     def post(self, request, *args, **kwargs):
         form = UploadFileForm(request.POST, request.FILES)
-        print(request.FILES['file1'])
-        print(request.FILES['file2'])
 
         main(request.FILES['file1'], request.FILES['file2'])
         return render(request, "main/download.html", {
