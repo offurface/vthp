@@ -3,30 +3,15 @@
 {% block title %}Выбор файлов{% endblock %}
 
 {% block content %}
-<div class="center-wrap login-wrap">
-  <div class="wrap-one">
-    <form class="forma" action="" method="POST">
-
-      {% csrf_token %}
-      {% load widget_tweaks %}
-
-      <p class="">Файл для обучения 1</p>
-
-      {{form.file1|add_class:"combobox"}}
-
-      <p class="">Файл для обучения 2</p>
-
-      {{form.file2|add_class:"combobox"}}
-
-
-
-
-      <div class="form-model__btn-box">
-        <input class="btn btn-second" value="Обучить" type="submit">
-      </div>
-
-    </form>
+<form class="forma" action="" method="POST">
+  {% csrf_token %}
+  {% load widget_tweaks %}
+  <p class="">Файл для обучения 1</p>
+  {{form.file1|add_class:"combobox"}}
+  <p class="">Файл для обучения 2</p>
+  {{form.file2|add_class:"combobox"}}
+  <div class="form-model__btn-box">
+    <input class="btn btn-second" value="Обучить" type="submit">
   </div>
-
-</div>
+</form>
 {% endblock %}

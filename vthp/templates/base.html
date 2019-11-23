@@ -10,11 +10,8 @@
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 <body>
-
-  <div class="page" canvas="container">
-    {% block content %}
-    {% endblock %}
-  </div>
+  {% block content %}
+  {% endblock %}
 
   <script src="{% static 'js/vendor.js' %} "></script>
   <script src="{% static 'js/script.js' %} "></script>
