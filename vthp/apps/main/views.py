@@ -17,15 +17,16 @@ from django.views.generic import (
     DeleteView,
     TemplateView,
 )
+from .forms import UploadFileForm
 
 class MainView(View):
 
     def get(self, request, *args, **kwargs):
 
-        files = File.objects.all()
+        form = UploadFileForm
 
         return render(request, "main/main.html", {
-            "files": files,
+            "form": form,
         })
 
     def post(self, request, *args, **kwargs):
